@@ -1,12 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo's Tic Tac Toe</title>
-</head>
-<body>
-    
-    <script src="src/script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Google Fonts -->
+		<!-- Font-family: Inter -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					fontSize: {
+						sm: "0.8rem", // sub for p
+						p: "1rem", // p
+						h3: "1.5rem", // h3
+						h2: "1.75rem", // h2
+						h1: "2rem", // h1
+					},
+					extend: {
+						colors: {
+							"primary": "#153448",
+                            "secondary": "#3c5b6f",
+                            "btn": "#fffab7",
+						},
+						fontFamily: {
+							inter: "Inter, sans-serif",
+						},
+					},
+				},
+			};
+		</script>
+		<style type="text/tailwindcss">
+			/* typography */
+			h1 {
+				@apply text-h1 font-bold;
+			}
+
+			h2 {
+				@apply text-h2 font-bold;
+			}
+
+			h3 {
+				@apply text-h3 font-bold;
+			}
+
+			/* colors */
+			.bg-primary-color {
+				background-color: #153448;
+			}
+
+			.bg-secondary-color {
+				background-color: #3c5b6f;
+			}
+
+			.bg-btn-color {
+				background-color: #fffab7;
+			}
+
+			/* buttons */
+			.button-play-again {
+				@apply text-h1 font-bold py-[8px] px-[32px] bg-btn-color text-black rounded-md shadow-md;
+			}
+
+			/* table (game board) */
+            table {
+                @apply w-[90%] h-[300px] rounded-xl bg-secondary-color;
+            }
+
+            tr {
+                @apply flex;
+            }
+
+			td {
+				@apply border-4 border-primary flex-1 h-[100px] flex items-center justify-center text-h1;
+			}
+		</style>
+		<title>Jogo's Tic Tac Toe</title>
+	</head>
+	<body class="font-inter bg-primary-color text-white">
+		<main>
+			<!-- components -->
+			<h1>TIC-TAC-TOE</h1>
+            <!-- WhoWon component -->
+			<h1 id="who-won">PLAYER X WON</h1>
+            <!-- Attacking component -->
+			<h2 id="attacking">Attacking<br />Player X</h2>
+			<p class="text-p">P</p>
+            <!-- PlayAgainButton -->
+			<button id="btn-play-again" type="button" class="button-play-again">
+				PLAY AGAIN
+			</button>
+
+            <!-- GameBoard component -->
+			<table
+				id="game-board"
+			>
+				<tbody>
+					<!-- 1st row -->
+					<tr>
+						<!-- col 1 -->
+						<td>X</td>
+						<!-- col 2 -->
+						<td>X</td>
+						<!-- col 3 -->
+						<td>X</td>
+					</tr>
+
+					<!-- 2nd row -->
+					<tr>
+						<!-- col 4 -->
+						<td>X</td>
+						<!-- col 5 -->
+						<td>X</td>
+						<!-- col 6 -->
+						<td>X</td>
+					</tr>
+
+					<!-- 3rd row -->
+					<tr>
+						<!-- col 7 -->
+						<td>X</td>
+						<!-- col 8 -->
+						<td>X</td>
+						<!-- col 9 -->
+						<td>X</td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
+		<script src="src/script.js"></script>
+	</body>
 </html>
